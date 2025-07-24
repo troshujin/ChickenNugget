@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn4yh07hdqf43"]
+
+[ext_resource type="Texture2D" uid="uid://ck1gvndef7blc" path="res://assets/sprites/sign.png" id="1_svbwx"]
+
+[node name="Sign" type="Node2D"]
+
+[node name="Sign" type="Sprite2D" parent="."]
+position = Vector2(16, 4)
+scale = Vector2(5, 5)
+texture = ExtResource("1_svbwx")
