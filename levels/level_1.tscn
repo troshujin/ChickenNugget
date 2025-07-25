@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=4 uid="uid://bkoaucjwd0y5s"]
+[gd_scene load_steps=9 format=4 uid="uid://bkoaucjwd0y5s"]
 
 [ext_resource type="Texture2D" uid="uid://dedvbwf22u72p" path="res://assets/sprites/tilesset1.png" id="1_bt44k"]
-[ext_resource type="PackedScene" uid="uid://djvphclvcvxm7" path="res://entities/player.tscn" id="1_jirdo"]
 [ext_resource type="PackedScene" uid="uid://cn0gptoybkwtu" path="res://entities/chicken_nugget.tscn" id="3_bt44k"]
+[ext_resource type="PackedScene" uid="uid://crmcl02evugfi" path="res://entities/portal.tscn" id="4_n46q3"]
+[ext_resource type="Texture2D" uid="uid://c45c80hu718j5" path="res://assets/sprites/portal.png" id="5_btoec"]
+[ext_resource type="PackedScene" uid="uid://coj0ia1nhedlb" path="res://entities/portal_spawn.tscn" id="5_n46q3"]
+[ext_resource type="PackedScene" uid="uid://ce5r4n0kcr08m" path="res://entities/sign.tscn" id="6_btoec"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx6l7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwceb"]
 texture = ExtResource("1_bt44k")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -127,7 +130,7 @@ physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Wall"
 terrain_set_0/terrain_0/color = Color(0.31563, 0.442225, 0.785441, 1)
-sources/1 = SubResource("TileSetAtlasSource_kx6l7")
+sources/1 = SubResource("TileSetAtlasSource_gwceb")
 
 [node name="Level1" type="Node2D"]
 
@@ -145,6 +148,15 @@ tile_set = SubResource("TileSet_hn12h")
 [node name="ChickenNugget" parent="." instance=ExtResource("3_bt44k")]
 position = Vector2(213, -257)
 
-[node name="Player" parent="." instance=ExtResource("1_jirdo")]
-z_index = 50
-position = Vector2(219, 412)
+[node name="Portal" parent="." instance=ExtResource("4_n46q3")]
+position = Vector2(-239, 64)
+scale = Vector2(3, 3)
+TargetScenePath = "uid://80jcr5dfwa5r"
+TargetSpawnName = "PortalSpawn_2A"
+PortalTexture = ExtResource("5_btoec")
+
+[node name="PortalSpawn_1A" parent="." instance=ExtResource("5_n46q3")]
+position = Vector2(-76, 321)
+
+[node name="Sign" parent="." instance=ExtResource("6_btoec")]
+position = Vector2(278, 349)
